@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="/static/account/style.css" />
+    <title>Login page</title>
+</head>
+
+<body background="http://www.belden.com/hubfs/resources/blog/digital-building/The%20Internet%20of%20Things%20in%20Real%20Life:%206%20IoT%20Examples.jpg">
+<div class="form-group">
+    <img  class="avatar" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB0MZeRDtPJvJ3PIBMXyHL5X68jiw_jZJeaSPOmZS6l4IaR4mT">
+    <h1>Login Here</h1>
+    <form method="POST" action="/iotapp/login/">
+        {% csrf_token %}
+        <p>{{message}}</p>
+        <p>Username<br>
+        <input type="text" required name="username"></p>
+        <p>Password<br>
+        <input type="password" required name="password"></p>
+        <input type="submit" name="submit" value="Login">
+        <p>If you don't have account  <a href="/iotapp/register">sign In</a></p>
+        <p>  <a href="/iotapp/reset/password">Forgot your password? </a></p>
+     </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/account/sign.css"/>
+     <title>SingIn</title>
+</head>
+
+<body background="http://www.belden.com/hubfs/resources/blog/digital-building/The%20Internet%20of%20Things%20in%20Real%20Life:%206%20IoT%20Examples.jpg">
+<div class="container">
+    <img  class="avatar" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB0MZeRDtPJvJ3PIBMXyHL5X68jiw_jZJeaSPOmZS6l4IaR4mT">
+    <h1>SingUp Here</h1>
+    <form  method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <p>Username {{form.username}}</p>
+        </div>
+        <div class="form-group">
+            <p>First Name {{form.first_name}}</p>
+        </div>
+        <div class="form-group">
+            <p>Last Name {{form.last_name}}</p>
+        </div>
+        <div class="form-group">
+            <p>Email: {{form.email}}</p>
+        </div>
+        <div class="form-group">
+            <p>Password{{form.password1}}</p>
+        </div>
+        <div class="form-group">
+            <p>Confirm Password{{form.password2}}</p>
+        </div>
+        <div class="input">
+            <button type="submit">SingUp</button>
+        </div>
+            <p style="color:white">*Minimum password length should be 8 characters.<br>
+               *Password should be alphanumeric.</p>
+
+     </form>
+</div>
+</body>
+</html>

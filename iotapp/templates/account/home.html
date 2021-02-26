@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<title>IOT.com</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-ios.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<script>
+function myFunction() {
+  var x = document.getElementById("demo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+    <style>
+        form
+        {
+          width:30%;
+          margin:80px auto 20px 30px;
+          }
+          p{
+           margin-top:10px;
+           }
+
+    </style>
+<body class="w3-flat-nephritis" style="background-image: url('../../static/Login supports/images/bg-01.jpg'); background-size: cover;">
+    <div class="w3-container" style="background-color:rgb(78, 213, 220)">
+      <div class="w3-bar">
+        <span class="w3-bar-item" style="font-size:20px">IOT.com</span>
+        <a style="font-size:20px" href="#" class="w3-bar-item w3-button">Home</a>
+        <a style="font-size:20px" href="#" class="w3-bar-item w3-button">About</a>
+          <div class="w3-bar-item w3-dropdown-hover" style="margin-left:400px">
+              <button class=" w3-button "><b>STATE OF PINS</b></button>
+        <div class="w3-dropdown-content w3-bar-block w3-border">
+            <div style="overflow-y:auto;">
+              <table class="w3-table w3-striped">
+                <tr>
+                  <th>Pin no.</th>
+                  <th>State</th>
+                </tr>
+                <tr>
+                  <td>pin3</td>
+                  <td>{{t.pin3}}</td>
+                </tr>
+                <tr>
+                  <td>pin5</td>
+                  <td>{{t.pin5}}</td>
+                </tr>
+                <tr>
+                  <td>pin7</td>
+                  <td>{{t.pin7}}</td>
+                </tr>
+                  <tr>
+                  <td>pin11</td>
+                  <td>{{t.pin11}}</td>
+                </tr>
+                  <tr>
+                  <td>pin13</td>
+                  <td>{{t.pin13}}</td>
+                </tr>
+                  <tr>
+                  <td>pin15</td>
+                  <td>{{t.pin15}}</td>
+                </tr>
+                  <tr>
+                  <td>pin19</td>
+                  <td>{{t.pin19}}</td>
+                </tr>
+                  <tr>
+                  <td>pin21</td>
+                  <td>{{t.pin21}}</td>
+                </tr>
+              </table>
+            </div>
+            </div>
+      </div>
+        <div class="w3-dropdown-click w3-right">
+            <button class="w3-button" onclick="myFunction()"><b>{{user.email}}</b></button>
+          <div id="demo" class="w3-dropdown-content w3-bar-block w3-card w3-animate-zoom" style="right:0">
+            <a href="/iotapp/logout/" class="w3-bar-item w3-button">Logout</a>
+            <a href="#" class="w3-bar-item w3-button">Change Password</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+    <form class="w3-container w3-card-4" action="{% url 'update' pk=user.api_key %}" method="GET">
+        <label class="w3-text-white" style="font-size:20px" ><b>Select Pin</b></label>
+            <input class="w3-input w3-border" type="text" name="pin">
+        <label class="w3-text-white" style="font-size:20px" ><b>State:ON/OFF</b></label>
+            <input class="w3-input w3-border" type="text" name="state">
+        <p><button type="submit" class=" w3-btn w3-flat-turquoise w3-round"><b>Insert</b></button></p>
+    </form>
+    </div>
+    <div class="w3-container w3-padding-32 w3-margin-left">
+        <label class="w3-text-white" style="font-size:20px" ><b>API</b></label>
+        <p>https://IOT.com{% url 'retrieve' pk=user.api_key %}</p>
+    </div>
+</body>
+</html>

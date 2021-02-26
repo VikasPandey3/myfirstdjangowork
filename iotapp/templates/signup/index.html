@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>SignUp</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Font-->
+	<link rel="stylesheet" type="text/css" href="../../static/SignUp%20support/css/roboto-font.css">
+	<link rel="stylesheet" type="text/css" href="../../static/SignUp%20support/fonts/line-awesome/css/line-awesome.min.css">
+	<!-- Jquery -->
+	<link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
+	<!-- Main Style Css -->
+    <link rel="stylesheet" href="../../static/SignUp%20support/css/style.css"/>
+</head>
+<body class="form-v2" style="background-image: url('../../static/SignUp%20support/images/icb.jpg');">
+	<div class="page-content" style="background-image: url('../../static/SignUp%20support/images/zan.jpg');">
+		<div class="form-v2-content">
+			<div class="form-left">
+				<img src="../../static/SignUp%20support/images/form-v2.jpg" alt="form">
+			</div>
+			<form method="POST" class="form-detail" id="myform">
+                {% csrf_token %}
+				<h2>SignUp</h2>
+				<div class="form-row">
+					<label for="{{form.username.id_for_label}}">Username:</label>
+					{{form.username}}
+				</div>
+				<div class="form-row">
+					<label for="{{form.email.id_for_label}}">Your Email:</label>
+					{{form.email}}
+					<!--<input type="text" name="email" id="your_email" class="input-text" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">-->
+				</div>
+				<div class="form-row">
+					<label for="{{form.password1.id_for_label}}">Password:</label>
+					{{form.password1}}
+				</div>
+				<div class="form-row">
+					<label for="{{form.password2.id_for_label}}">Confirm Password:</label>
+					{{form.password2}}
+				</div>
+				<!--<div class="form-checkbox">
+					<label class="container">By signing up, you agree to the <a href="#" class="text">Play Term of Service</a>
+					  	<input type="checkbox" name="agree" id="agree">
+					  	<span class="checkmark"></span>
+					</label>
+				</div>-->
+				<div class="form-row-last">
+					<input type="submit" class="register" value="Register">
+				</div>
+			</form>
+		</div>
+	</div>
+<!--	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+	<script>
+		// just for the demos, avoids form submit
+		jQuery.validator.setDefaults({
+		  	debug: true,
+		  	success:  function(label){
+        		label.attr('id', 'valid');
+   		 	},
+		});
+		$( "#myform" ).validate({
+		  	rules: {
+		    	password: "required",
+		    	Password2: {
+		      		equalTo: "#password"
+		    	}
+		  	},
+		  	messages: {
+		  		username: {
+		  			required: "Please provide an username"
+		  		},
+		  		email: {
+		  			required: "Please provide an email"
+		  		},
+		  		Password1: {
+	  				required: "Please provide a password"
+		  		},
+		  		Password2: {
+		  			required: "Please provide a password",
+		      		equalTo: "Wrong Password"
+		    	}
+		  	}
+		});
+	</script>-->
+</body>
+</html>
